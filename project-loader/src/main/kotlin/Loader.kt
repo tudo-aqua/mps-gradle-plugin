@@ -56,6 +56,7 @@ private fun basicEnvironmentConfig(): EnvironmentConfig {
             .withVcsPlugin()
             .withJavaPlugin()
             .addPreInstalledPlugin("mps-httpsupport", "jetbrains.mps.ide.httpsupport")
+            .withTestModeOn()
     return config
 }
 
