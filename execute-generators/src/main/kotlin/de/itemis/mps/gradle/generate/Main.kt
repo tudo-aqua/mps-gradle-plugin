@@ -5,9 +5,9 @@ import com.xenomachina.argparser.SystemExitException
 import com.xenomachina.argparser.mainBody
 import de.itemis.mps.gradle.project.loader.Args
 import de.itemis.mps.gradle.project.loader.executeWithProject
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
 
-private val logger = Logger.getLogger("de.itemis.mps.gradle.generate")
+private val logger = LogManager.getLogger("de.itemis.mps.gradle.generate")
 
 class GenerateArgs(parser: ArgParser) : Args(parser) {
     val models by parser.adding("--model",

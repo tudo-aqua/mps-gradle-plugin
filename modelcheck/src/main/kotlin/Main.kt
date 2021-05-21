@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelStereotype
 import jetbrains.mps.typesystemEngine.checker.NonTypesystemChecker
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker
 import jetbrains.mps.util.CollectConsumer
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
 import org.jetbrains.mps.openapi.model.SModel
 import java.io.File
 import java.text.SimpleDateFormat
@@ -32,7 +32,7 @@ import java.util.*
 import kotlin.math.min
 import kotlin.test.fail
 
-private val logger = Logger.getLogger("de.itemis.mps.gradle.modelcheck")
+private val logger = LogManager.getLogger("de.itemis.mps.gradle.modelcheck")
 
 enum class ReportFormat {
     ONE_TEST_PER_MODEL,

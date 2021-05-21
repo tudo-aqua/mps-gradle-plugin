@@ -131,8 +131,8 @@ class JBRDownloadTest {
                 jbrVersion = "11_0_6-b520.66"
             }
             tasks.register<Exec>("exec") {
-                dependsOn(tasks.getByName("downloadJbr", de.itemis.mps.gradle.downloadJBR.DownloadJbrForPlatform::class))
-                executable = tasks.getByName("downloadJbr", de.itemis.mps.gradle.downloadJBR.DownloadJbrForPlatform::class).javaExecutable.absolutePath
+                dependsOn(tasks.getByName("downloadJbr", DownloadJbrForPlatform::class))
+                executable = tasks.getByName("downloadJbr", DownloadJbrForPlatform::class).javaExecutable.absolutePath
                 args("--version")
             }
         """.trimIndent())

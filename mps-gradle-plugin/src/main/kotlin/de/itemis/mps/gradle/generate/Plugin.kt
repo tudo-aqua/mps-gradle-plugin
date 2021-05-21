@@ -6,7 +6,6 @@ import de.itemis.mps.gradle.validateDefaultJvm
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.Configuration
 import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.JavaExec
 import org.gradle.kotlin.dsl.support.zipTo

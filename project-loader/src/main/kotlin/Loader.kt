@@ -1,11 +1,10 @@
 package de.itemis.mps.gradle.project.loader
 
-import com.intellij.openapi.application.PathMacros
 import jetbrains.mps.project.Project
 import jetbrains.mps.tool.environment.EnvironmentConfig
 import jetbrains.mps.tool.environment.IdeaEnvironment
 import jetbrains.mps.util.PathManager
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
 import java.io.File
 
 data class Plugin(
@@ -18,7 +17,7 @@ data class Macro(
         val value: String
 )
 
-private val logger = Logger.getLogger("de.itemis.mps.gradle.project.loader")
+private val logger = LogManager.getLogger("de.itemis.mps.gradle.project.loader")
 
 /**
  *  The Idea platform reads this property first to determine where additional plugins are loaded from.

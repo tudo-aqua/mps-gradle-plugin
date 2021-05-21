@@ -1,4 +1,4 @@
-rootProject.name = "mps-gradle-plugin"
-include("execute-generators")
-include("project-loader")
-include("modelcheck")
+rootProject.name = "mps-gradle-plugin-parent"
+
+include("mps-gradle-plugin")
+include("execute-generators", "project-loader", "modelcheck")

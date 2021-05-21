@@ -13,7 +13,7 @@ bin/
 build/
 mps-prj/solutions/my.build/build.xml
 .gradle/
-test/generate-build-solution/mps-prj/solutions/my.build/build.xml
+mps-gradle-plugin/test/generate-build-solution/mps-prj/solutions/my.build/build.xml
 .DS_Store
 workspace.xml
 **/*_gen*/

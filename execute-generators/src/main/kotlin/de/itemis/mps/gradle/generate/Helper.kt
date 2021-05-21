@@ -16,12 +16,13 @@ import jetbrains.mps.smodel.language.LanguageRegistry
 import jetbrains.mps.smodel.resources.ModelsToResources
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor
 import jetbrains.mps.tool.builder.make.BuildMakeService
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
 import org.jetbrains.concurrency.AsyncPromise
 import org.jetbrains.mps.openapi.language.SLanguage
 import org.jetbrains.mps.openapi.model.SModel
 
-private val logger = Logger.getLogger("de.itemis.mps.gradle.generate")
+private val logger = LogManager.getLogger("de.itemis.mps.gradle.generate")
+private val messageLogger = LogManager.getLogger("de.itemis.mps.gradle.generate.messages")
 
 private val DEFAULT_FACETS = listOf(
         IFacet.Name("jetbrains.mps.lang.core.Generate"),
@@ -30,13 +31,12 @@ private val DEFAULT_FACETS = listOf(
         IFacet.Name("jetbrains.mps.lang.makeup.Makeup"))
 
 private class MsgHandler : IMessageHandler {
-    val logger = Logger.getLogger("de.itemis.mps.gradle.generate.messages")
     override fun handle(msg: IMessage) {
         when (msg.kind) {
-            MessageKind.INFORMATION -> logger.info(msg.text, msg.exception)
-            MessageKind.WARNING -> logger.warn(msg.text, msg.exception)
-            MessageKind.ERROR -> logger.error(msg.text, msg.exception)
-            null -> logger.error(msg.text, msg.exception)
+            MessageKind.INFORMATION -> messageLogger.info(msg.text, msg.exception)
+            MessageKind.WARNING -> messageLogger.warn(msg.text, msg.exception)
+            MessageKind.ERROR -> messageLogger.error(msg.text, msg.exception)
+            null -> messageLogger.error(msg.text, msg.exception)
         }
     }
 
