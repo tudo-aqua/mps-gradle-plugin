@@ -25,9 +25,6 @@ val kotlinArgParserVersion: String by project
 val mpsVersion: String by project
 val fastXmlJacksonVersion: String by project
 
-val kotlinApiVersion: String by project
-val kotlinVersion: String by project
-
 val pluginVersion = "3"
 
 version = if (project.hasProperty("forceCI") || project.hasProperty("teamcity")) {
@@ -40,8 +37,7 @@ version = if (project.hasProperty("forceCI") || project.hasProperty("teamcity"))
 
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8", version = kotlinVersion))
-    implementation(kotlin("test", version = kotlinVersion))
+    implementation(kotlin("test"))
     implementation("com.xenomachina:kotlin-argparser:$kotlinArgParserVersion")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$fastXmlJacksonVersion")
     compileOnly("com.jetbrains:mps-openapi:$mpsVersion")

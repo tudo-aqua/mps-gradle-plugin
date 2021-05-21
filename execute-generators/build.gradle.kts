@@ -23,9 +23,6 @@ val nexusPassword: String? by project
 val kotlinArgParserVersion: String by project
 val mpsVersion: String by project
 
-val kotlinApiVersion: String by project
-val kotlinVersion: String by project
-
 val pluginVersion = "2"
 
 version = if (project.hasProperty("forceCI") || project.hasProperty("teamcity")) {
@@ -38,7 +35,6 @@ version = if (project.hasProperty("forceCI") || project.hasProperty("teamcity"))
 
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8", version = kotlinVersion))
     implementation("com.xenomachina:kotlin-argparser:$kotlinArgParserVersion")
     compileOnly("com.jetbrains:mps-openapi:$mpsVersion")
     compileOnly("com.jetbrains:mps-core:$mpsVersion")
@@ -51,7 +47,6 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.apiVersion = kotlinApiVersion
     kotlinOptions.allWarningsAsErrors = true
 }
 

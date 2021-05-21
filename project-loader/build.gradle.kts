@@ -11,8 +11,6 @@ group = "de.itemis.mps"
 
 val mpsVersion: String by project
 val kotlinArgParserVersion: String by project
-val kotlinApiVersion: String by project
-val kotlinVersion: String by project
 
 val nexusUsername: String? by project
 val nexusPassword: String? by project
@@ -36,7 +34,6 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8", version = kotlinVersion))
     implementation("com.xenomachina:kotlin-argparser:$kotlinArgParserVersion")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$fastXmlJacksonVersion")
     compileOnly("com.jetbrains:mps-core:$mpsVersion")
@@ -51,7 +48,6 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.apiVersion = kotlinApiVersion
     kotlinOptions.allWarningsAsErrors = true
 }
 

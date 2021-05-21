@@ -7,16 +7,12 @@ buildscript {
     }
 }
 
-val kotlinApiVersion by extra { "1.3" }
-val kotlinVersion by extra { "$kotlinApiVersion.11" }
-
 
 plugins {
     groovy
     `java-gradle-plugin`
     `kotlin-dsl`
     `maven-publish`
-    kotlin("jvm") version "1.3.11"
 }
 
 val versionMajor = 1
@@ -60,7 +56,6 @@ dependencyLocking {
 
 dependencies {
     implementation(localGroovy())
-    implementation(kotlin("stdlib", version = kotlinVersion))
     testImplementation("junit:junit:4.12")
 }
 
@@ -84,7 +79,7 @@ gradlePlugin {
 
 tasks {
     wrapper {
-        gradleVersion = "6.2.2"
+        gradleVersion = "7.0.2"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -135,7 +130,6 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.apiVersion = kotlinApiVersion
     kotlinOptions.allWarningsAsErrors = true
 }
 
